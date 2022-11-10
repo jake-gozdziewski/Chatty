@@ -1,5 +1,5 @@
 # Chatty
-Chat screen for Muzz application process. See the [demo video](Demo Recording.webm) for a quick overview.
+Chat screen for Muzz application process. See the Demo Recording.webm for a quick overview.
 
 ### Scoping
 

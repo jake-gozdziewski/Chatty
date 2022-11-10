@@ -2,6 +2,7 @@ package com.muzz.chatty.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person4
 import androidx.compose.runtime.Composable
@@ -31,14 +32,16 @@ fun MainScreen(
             )
         },
         bottomBar = {
-            TextEntryBox(
-                sendMessage = { viewModel.sendMessage(text = it, isReply = false) },
-                modifier = Modifier
-                    .imePadding()
-                    .padding(horizontal = 16.dp)
-                    .padding(top = 8.dp, bottom = 16.dp)
-                    .requiredHeight(40.dp)
-            )
+            Surface(elevation = 12.dp) {
+                TextEntryBox(
+                    sendMessage = { viewModel.sendMessage(text = it, isReply = false) },
+                    modifier = Modifier
+                        .imePadding()
+                        .padding(horizontal = 16.dp)
+                        .padding(top = 8.dp, bottom = 16.dp)
+                        .requiredHeight(40.dp)
+                )
+            }
         }
     ) { paddingValues ->
         Box(

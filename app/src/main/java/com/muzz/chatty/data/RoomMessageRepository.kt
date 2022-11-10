@@ -28,6 +28,7 @@ class RoomMessageRepository @Inject constructor(
     override suspend fun restoreOriginalContent() {
         withContext(Dispatchers.IO) {
             database.clearAllTables()
+            messageDao.insert(*getSampleMessages().toTypedArray())
         }
     }
 }

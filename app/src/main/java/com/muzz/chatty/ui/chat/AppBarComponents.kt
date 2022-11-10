@@ -5,6 +5,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ChevronLeft
+import androidx.compose.material.icons.filled.MoreHoriz
 import androidx.compose.material.icons.filled.Person3
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -100,6 +101,40 @@ internal fun UserHeaderPreview() {
         UserHeader(
             name = "Sarah",
             avatar = Icons.Default.Person3
+        )
+    }
+}
+
+
+
+/** Ellipsis button for the top app bar. */
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun EllipsisButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Surface(
+        shape = CircleShape,
+        onClick = onClick
+    ) {
+        Icon(
+            imageVector = Icons.Default.MoreHoriz,
+            contentDescription = null,
+            modifier = modifier,
+            tint = MuzzGray
+        )
+    }
+}
+
+
+@BasicPreview
+@Composable
+internal fun EllipsisButtonPreview() {
+    ChattyTheme {
+        EllipsisButton(
+            onClick = { },
+            modifier = Modifier.requiredSize(48.dp)
         )
     }
 }

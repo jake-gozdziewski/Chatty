@@ -23,4 +23,5 @@ Here are some stretch goals - things I will consider adding once I've finished t
 
 ### Assumptions
 
-Scoping outlined some of the high-level assumptions. Here are any implementation-specific considerations that I encounter as I work on the demo.
+Scoping outlined some of the high-level assumptions. Here are any implementation-specific considerations that I encounter as I work on the demo:
+- **Compose Component Reusability**: As I wrote the components to be used in the `MainScreen` composable, I took basic steps to potentially make them more reusable. As there are no other screens, this is quite rudimentary -- having a better idea of the larger design picture, I would probably model these components differently. For the prototype, this approach was okay, if a little overengineered.

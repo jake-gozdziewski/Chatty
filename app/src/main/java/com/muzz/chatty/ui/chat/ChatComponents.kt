@@ -1,0 +1,107 @@
+package com.muzz.chatty.ui.chat
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.muzz.chatty.ui.theme.BasicPreview
+import com.muzz.chatty.ui.theme.ChattyTheme
+import com.muzz.chatty.ui.theme.MuzzPink
+import com.muzz.chatty.ui.theme.MuzzSnow
+
+
+internal val BubbleShape = RoundedCornerShape(size = 16.dp)
+internal val TailedMessageShape = BubbleShape.copy(bottomEnd = CornerSize(0.dp))
+internal val TailedReplyShape = BubbleShape.copy(bottomStart = CornerSize(0.dp))
+
+/**
+ * Container for the message with given [text] sent **from** the current user.
+ * If [showTail] is true, the bottom left corner is squared.
+ */
+@Composable
+fun MessageChip(
+    text: String,
+    modifier: Modifier = Modifier,
+    showTail: Boolean = false,
+) {
+    Box(
+        modifier = modifier.fillMaxWidth(),
+        contentAlignment = Alignment.CenterEnd,
+    ) {
+        Surface(
+            modifier = Modifier.widthIn(max = 300.dp),
+            shape = if (showTail) TailedMessageShape else BubbleShape,
+            color = MuzzPink
+        ) {
+            Text(
+                text = text,
+                style = MaterialTheme.typography.body1,
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
+            )
+        }
+    }
+}
+
+
+@BasicPreview
+@Composable
+internal fun MessageChipPreview() {
+    ChattyTheme {
+        MessageChip(
+            text = """
+                Does 7pm work for you? I've got to go pick up my little brother first from a party
+            """.trimIndent()
+        )
+    }
+}
+
+
+
+/**
+ * Container for the message with given [text] sent **to** the current user
+ * If [showTail] is true, the bottom right corner is squared.
+ */
+@Composable
+fun ReplyChip(
+    text: String,
+    modifier: Modifier = Modifier,
+    showTail: Boolean = false,
+) {
+    Box(
+        modifier = modifier.fillMaxWidth(),
+        contentAlignment = Alignment.CenterStart,
+    ) {
+        Surface(
+            modifier = Modifier.widthIn(max = 300.dp),
+            shape = if (showTail) TailedReplyShape else BubbleShape,
+            color = MuzzSnow
+        ) {
+            Text(
+                text = text,
+                style = MaterialTheme.typography.body1,
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
+            )
+        }
+    }
+}
+
+@BasicPreview
+@Composable
+internal fun ReplyChipPreview() {
+    ChattyTheme {
+        ReplyChip(
+            text = """
+                Does 7pm work for you? I've got to go pick up my little brother first from a party
+            """.trimIndent()
+        )
+    }
+}

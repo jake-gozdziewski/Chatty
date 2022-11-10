@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -19,6 +20,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    ksp {
+        arg("room.schemaLocation", "$rootDir/schemas") // Location of the database schema
+        arg("room.incremental", "true") // Enables Gradle incremental annotation processor
     }
     kotlinOptions {
         jvmTarget = "11"
@@ -38,4 +43,8 @@ dependencies {
     // Hilt
     implementation(libs.androidx.hilt.core)
     kapt(libs.androidx.hilt.kapt)
+
+    // Room
+    implementation(libs.bundles.androidx.room)
+    ksp(libs.androidx.room.ksp)
 }

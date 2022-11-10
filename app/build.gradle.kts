@@ -39,6 +39,7 @@ android {
 dependencies {
     implementation(libs.androidx.core)
     implementation(libs.bundles.androidx.compose)
+    implementation(libs.google.accompanist.system)
 
     // Hilt
     implementation(libs.androidx.hilt.core)

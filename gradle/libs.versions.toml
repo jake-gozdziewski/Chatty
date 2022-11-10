@@ -24,6 +24,7 @@ androidx-work-hilt = "1.0.0"
 desugar = "1.2.2"
 google-flexbox = "3.0.0"
 google-material = "1.6.1"
+google-accompanist-system = "0.27.0"
 junit4 = "4.13.2"
 kotlinx-coroutines = "1.6.1"
 mockk = "1.12.5"
@@ -68,6 +69,7 @@ androidx-work = { module = "androidx.work:work-runtime-ktx", version.ref = "andr
 androidx-work-hilt-core = { module = "androidx.hilt:hilt-work", version.ref = "androidx.work.hilt" } # Hilt extensions for AndroidX Work
 androidx-work-hilt-kapt = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx.work.hilt" } # Kapt compiler for Work extensions
 desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar" } # Java 8 desugaring support (https://developer.android.com/studio/write/java8-support)
+google-accompanist-system = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "google.accompanist.system" } # Allows cotrolling system UI using Jetpack Compose theming
 google-flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "google.flexbox" } # Flexbox layout, used for double staggered layout in Tag Manager
 google-material = { module = "com.google.android.material:material", version.ref = "google.material" } # Material Components (Views)
 mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" } # Charts (https://github.com/PhilJay/MPAndroidChart)

@@ -35,7 +35,7 @@ fun TextEntryBox(
 
         SendButton(
             onClick = {
-                sendMessage(text)
+                if (text.isNotBlank()) sendMessage(text)
                 text = ""
             },
             modifier = Modifier.fillMaxHeight(),

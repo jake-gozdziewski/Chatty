@@ -21,6 +21,7 @@ fun MainScreen(
     val messageList by viewModel.messageList.collectAsState(initial = emptyList())
 
     Scaffold(
+        modifier = Modifier.systemBarsPadding(),
         topBar = {
             ChattyAppBar(
                 userName = "Bob",
@@ -33,6 +34,7 @@ fun MainScreen(
             TextEntryBox(
                 sendMessage = { viewModel.sendMessage(text = it, isReply = false) },
                 modifier = Modifier
+                    .imePadding()
                     .padding(horizontal = 16.dp)
                     .padding(top = 8.dp, bottom = 16.dp)
                     .requiredHeight(40.dp)

@@ -14,7 +14,11 @@ import com.muzz.chatty.model.ChatMessage
 import com.muzz.chatty.ui.theme.BasicPreview
 import com.muzz.chatty.ui.theme.ChattyTheme
 
-/** Vertical list of [ChatMessage]s provided */
+/**
+ * Vertical list of [ChatMessage]s provided.
+ * Uses double-reverse trick to ensure the list properly adjusts its scroll position
+ * when the window bounds are changed (i.e. when the soft input keyboard is shown).
+ */
 @Composable
 fun Conversation(
     messageList: List<ChatMessage>,
@@ -24,9 +28,10 @@ fun Conversation(
     LazyColumn(
         modifier = modifier,
         contentPadding = contentPadding,
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+        reverseLayout = true
     ) {
-        items(messageList) { message ->
+        items(messageList.reversed()) { message ->
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 if (message.header.isNotBlank()) {
                     ChatHeader(

@@ -34,7 +34,10 @@ fun TextEntryBox(
         )
 
         SendButton(
-            onClick = { sendMessage(text) },
+            onClick = {
+                sendMessage(text)
+                text = ""
+            },
             modifier = Modifier.fillMaxHeight(),
             iconModifier = Modifier
                 .padding(6.dp)

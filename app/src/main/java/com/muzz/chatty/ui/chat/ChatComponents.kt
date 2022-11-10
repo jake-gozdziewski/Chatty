@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.muzz.chatty.ui.theme.*
 
 
-internal val BubbleShape = RoundedCornerShape(size = 16.dp)
+internal val BubbleShape = RoundedCornerShape(size = 20.dp)
 internal val TailedMessageShape = BubbleShape.copy(bottomEnd = CornerSize(0.dp))
 internal val TailedReplyShape = BubbleShape.copy(bottomStart = CornerSize(0.dp))
 
@@ -45,7 +45,7 @@ fun MessageChip(
                 Text(
                     text = text,
                     style = MaterialTheme.typography.body1,
-                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
                 )
                 Icon(
                     imageVector = Icons.Default.DoneAll,
@@ -99,7 +99,7 @@ fun ReplyChip(
             Text(
                 text = text,
                 style = MaterialTheme.typography.body1,
-                modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
+                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
             )
         }
     }

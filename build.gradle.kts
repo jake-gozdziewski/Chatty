@@ -1,3 +1,6 @@
+// Workaround for https://youtrack.jetbrains.com/issue/KTIJ-19369 and https://github.com/gradle/gradle/issues/20131
+@file:Suppress("DSL_SCOPE_VIOLATION")
+
 buildscript {
     repositories {
         google()
@@ -6,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    id("com.android.application") version "7.3.1" apply false
-    id("com.android.library") version "7.3.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.6.10" apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
 }

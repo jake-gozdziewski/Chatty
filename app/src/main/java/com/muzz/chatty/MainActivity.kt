@@ -7,7 +7,9 @@ import androidx.activity.viewModels
 import com.muzz.chatty.ui.ChatViewModel
 import com.muzz.chatty.ui.MainScreen
 import com.muzz.chatty.ui.theme.ChattyTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val viewModel: ChatViewModel by viewModels()

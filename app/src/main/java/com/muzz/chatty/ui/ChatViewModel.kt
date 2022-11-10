@@ -1,11 +1,17 @@
 package com.muzz.chatty.ui
 
 import androidx.lifecycle.ViewModel
+import com.muzz.chatty.data.MessageRepository
 import com.muzz.chatty.model.ChatMessage
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class ChatViewModel: ViewModel() {
+@HiltViewModel
+class ChatViewModel @Inject constructor(
+    repository: MessageRepository
+): ViewModel() {
 
     val messageList: Flow<List<ChatMessage>> = flow {
         emit(

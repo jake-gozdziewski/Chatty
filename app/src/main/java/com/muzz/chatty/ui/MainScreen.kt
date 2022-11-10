@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Person3
 import androidx.compose.material.icons.filled.Person4
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -20,13 +21,14 @@ fun MainScreen(
     viewModel: ChatViewModel
 ) {
     val messageList by viewModel.messageList.collectAsState(initial = emptyList())
+    val isUserSarah by viewModel.isUserSarah.collectAsState(initial = false)
 
     Scaffold(
         modifier = Modifier.systemBarsPadding(),
         topBar = {
             ChattyAppBar(
-                userName = "Bob",
-                userAvatar = Icons.Default.Person4,
+                userName = if (isUserSarah) "Bob" else "Sarah",
+                userAvatar = if (isUserSarah) Icons.Default.Person4 else Icons.Default.Person3,
                 onBackClick = viewModel::restoreContent,
                 onEllipsisClick = viewModel::changeUser,
             )
@@ -34,7 +36,7 @@ fun MainScreen(
         bottomBar = {
             Surface(elevation = 12.dp) {
                 TextEntryBox(
-                    sendMessage = { viewModel.sendMessage(text = it, isReply = false) },
+                    sendMessage = { viewModel.sendMessage(text = it, isReply = isUserSarah) },
                     modifier = Modifier
                         .imePadding()
                         .padding(horizontal = 16.dp)

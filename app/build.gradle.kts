@@ -47,4 +47,9 @@ dependencies {
     // Room
     implementation(libs.bundles.androidx.room)
     ksp(libs.androidx.room.ksp)
+
+    // WorkManager
+    implementation(libs.androidx.work)
+    implementation(libs.androidx.work.hilt.core)
+    kapt(libs.androidx.work.hilt.kapt)
 }

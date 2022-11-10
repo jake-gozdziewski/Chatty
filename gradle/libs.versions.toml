@@ -20,6 +20,7 @@ androidx-test-junit = "1.1.3"
 androidx-test-orchestrator = "1.4.1"
 androidx-test-runner = "1.4.0"
 androidx-work = "2.7.1"
+androidx-work-hilt = "1.0.0"
 desugar = "1.2.2"
 google-flexbox = "3.0.0"
 google-material = "1.6.1"
@@ -64,6 +65,8 @@ androidx-room-ksp = { module = "androidx.room:room-compiler", version.ref = "and
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx.room" } # Room kotln extensions and coroutines support
 androidx-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx.lifecycle" } # ViewModel
 androidx-work = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx.work" } # WorkManager
+androidx-work-hilt-core = { module = "androidx.hilt:hilt-work", version.ref = "androidx.work.hilt" } # Hilt extensions for AndroidX Work
+androidx-work-hilt-kapt = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx.work.hilt" } # Kapt compiler for Work extensions
 desugar = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar" } # Java 8 desugaring support (https://developer.android.com/studio/write/java8-support)
 google-flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "google.flexbox" } # Flexbox layout, used for double staggered layout in Tag Manager
 google-material = { module = "com.google.android.material:material", version.ref = "google.material" } # Material Components (Views)

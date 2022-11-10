@@ -12,6 +12,8 @@ import androidx.compose.material.icons.filled.DoneAll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.muzz.chatty.ui.theme.*
 
@@ -112,5 +114,42 @@ internal fun ReplyChipPreview() {
                 Does 7pm work for you? I've got to go pick up my little brother first from a party
             """.trimIndent()
         )
+    }
+}
+
+
+
+/** Simple header for a group of messages, [text] expected in form "day hh:mm" */
+@Composable
+fun ChatHeader(
+    text: String,
+    modifier: Modifier = Modifier
+) {
+    val (day, time) = text.split(" ") // Input assumed as "day hh:mm"
+    
+    Row(
+        modifier = modifier, 
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        Text(
+            text = day,
+            style = MaterialTheme.typography.caption,
+            color = Color.Black.copy(alpha = 0.4f), // Would need to change for dynamic themes
+            fontWeight = FontWeight.W800,
+        )
+        Text(
+            text = time,
+            style = MaterialTheme.typography.caption,
+            color = Color.Black.copy(alpha = 0.4f), // Would need to change for dynamic themes
+        )
+    }
+}
+
+
+@BasicPreview
+@Composable
+internal fun ChatHeaderPreview() {
+    ChattyTheme {
+        ChatHeader(text = "Thursday 22:33")
     }
 }

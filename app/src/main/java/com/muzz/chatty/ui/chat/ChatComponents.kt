@@ -1,22 +1,19 @@
 package com.muzz.chatty.ui.chat
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DoneAll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.muzz.chatty.ui.theme.BasicPreview
-import com.muzz.chatty.ui.theme.ChattyTheme
-import com.muzz.chatty.ui.theme.MuzzPink
-import com.muzz.chatty.ui.theme.MuzzSnow
+import com.muzz.chatty.ui.theme.*
 
 
 internal val BubbleShape = RoundedCornerShape(size = 16.dp)
@@ -42,11 +39,23 @@ fun MessageChip(
             shape = if (showTail) TailedMessageShape else BubbleShape,
             color = MuzzPink
         ) {
-            Text(
-                text = text,
-                style = MaterialTheme.typography.body1,
-                modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
-            )
+            Box {
+                Text(
+                    text = text,
+                    style = MaterialTheme.typography.body1,
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
+                )
+                Icon(
+                    imageVector = Icons.Default.DoneAll,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd)
+                        .size(14.dp)
+                        .offset(x = (-6).dp, y = (-2).dp),
+                    tint = MuzzYellow
+                )
+            }
+            
         }
     }
 }

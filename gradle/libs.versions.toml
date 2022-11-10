@@ -43,6 +43,7 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 androidx-benchmark-macro = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "androidx.benchmark.macro" } # Macrobenchmark
 androidx-compose-activity = { module = "androidx.activity:activity-compose", version.ref = "androidx.activity" } # Compose Activity Integration
 androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx.compose.base" } # Compose Material Design
+androidx-compose-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx.compose.base" } # Extended Material Icons
 androidx-compose-animation = { module = "androidx.compose.animation:animation", version.ref = "androidx.compose.base" } # Compose Animations
 androidx-compose-ui = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx.compose.base" } # Compose Live Preview
 androidx-compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx.lifecycle" } # Compose ViewModel Integration
@@ -97,6 +98,7 @@ ksp-plugin = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin
 androidx-compose = [
     "androidx.compose.activity",
     "androidx.compose.material",
+    "androidx.compose.icons",
     "androidx.compose.animation",
     "androidx.compose.ui",
     "androidx.compose.viewmodel"

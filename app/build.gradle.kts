@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.kapt")
     id("dagger.hilt.android.plugin")
     id("com.google.devtools.ksp")
+    id("io.realm.kotlin")
 }
 
 android {
@@ -53,4 +54,7 @@ dependencies {
     implementation(libs.androidx.work)
     implementation(libs.androidx.work.hilt.core)
     kapt(libs.androidx.work.hilt.kapt)
+
+    // Realm
+    implementation(libs.realm.base)
 }

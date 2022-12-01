@@ -10,6 +10,7 @@ androidx-room = "2.4.3"
 androidx-work = "2.7.1"
 androidx-work-hilt = "1.0.0"
 google-accompanist-system = "0.27.0"
+realm = "1.4.0"
 
 # Plugin versions
 android-gradle-plugin = "7.3.1"
@@ -35,6 +36,7 @@ androidx-work = { module = "androidx.work:work-runtime-ktx", version.ref = "andr
 androidx-work-hilt-core = { module = "androidx.hilt:hilt-work", version.ref = "androidx.work.hilt" } # Hilt extensions for AndroidX Work
 androidx-work-hilt-kapt = { module = "androidx.hilt:hilt-compiler", version.ref = "androidx.work.hilt" } # Kapt compiler for Work extensions
 google-accompanist-system = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "google.accompanist.system" } # Allows cotrolling system UI using Jetpack Compose theming
+realm-base = { group = "io.realm.kotlin", name = "library-base", version.ref = "realm" } # Realm
 
 
 [bundles]
@@ -58,4 +60,5 @@ android-application = { id = "com.android.application", version.ref = "android.g
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "androidx.hilt" } # Hilt plugin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" } # Kotlin for Android
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" } # Kotlin Symbol Processing
+realm = { id = "io.realm.kotlin", version.ref = "realm" } # Realm local database
 

@@ -1,4 +1,4 @@
-package com.muzz.chatty.data
+package com.muzz.chatty.data.room
 
 import android.content.Context
 import androidx.room.Database

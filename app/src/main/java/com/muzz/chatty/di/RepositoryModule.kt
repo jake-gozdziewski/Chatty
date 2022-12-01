@@ -1,7 +1,7 @@
 package com.muzz.chatty.di
 
-import com.muzz.chatty.data.MessageRepository
-import com.muzz.chatty.data.RoomMessageRepository
+import com.muzz.chatty.data.room.MessageRepository
+import com.muzz.chatty.data.room.RoomMessageRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

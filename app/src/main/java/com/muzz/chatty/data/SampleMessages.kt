@@ -1,5 +1,7 @@
 package com.muzz.chatty.data
 
+import com.muzz.chatty.data.room.Message
+
 fun getSampleMessages(referenceTime: Long = System.currentTimeMillis()) = listOf(
     Message(
         userId = 1,

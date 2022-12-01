@@ -1,7 +1,7 @@
 package com.muzz.chatty.di
 
 import android.content.Context
-import com.muzz.chatty.data.MessageDatabase
+import com.muzz.chatty.data.room.MessageDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

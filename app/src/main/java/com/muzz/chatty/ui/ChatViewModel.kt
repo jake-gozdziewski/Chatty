@@ -2,7 +2,7 @@ package com.muzz.chatty.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.muzz.chatty.data.MessageRepository
+import com.muzz.chatty.data.room.MessageRepository
 import com.muzz.chatty.model.ChatMessage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow

@@ -1,5 +1,6 @@
-package com.muzz.chatty.data
+package com.muzz.chatty.data.room
 
+import com.muzz.chatty.data.getSampleMessages
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext

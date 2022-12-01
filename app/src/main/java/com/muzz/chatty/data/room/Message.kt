@@ -1,4 +1,4 @@
-package com.muzz.chatty.data
+package com.muzz.chatty.data.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
